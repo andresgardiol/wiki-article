@@ -2,6 +2,7 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import React from 'react'
 
+const url = "http://localhost:5000";
 
 class Home extends React.Component {
     constructor(props) {
@@ -77,7 +78,7 @@ export async function getStaticProps() {
 }
 
 async function getRandomArticle() {
-    let responsePromise = fetch("http://localhost:5000");
+    let responsePromise = fetch(url);
     return await responsePromise
         .then(result => result.json());
 }
